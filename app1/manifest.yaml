@@ -38,28 +38,28 @@ spec:
     protocol: TCP
     port: 80 # service port
     targetPort: 80 # container port
-# ---
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#     name: echoserver
-#     annotations:
-#       kubernetes.io/ingress.class: alb
-#       alb.ingress.kubernetes.io/scheme: internet-facing
-#       alb.ingress.kubernetes.io/target-type: ip
-#       alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:315069654700:certificate/eefec79d-8012-4e7e-a530-baf154b833f2
-#       alb.ingress.kubernetes.io/listen-ports: '[ {"HTTPS": 443}]'
-#       alb.ingress.kubernetes.io/tags: Environment=dev,Team=test
-#       alb.ingress.kubernetes.io/group.name: expense
-# spec:
-#     rules:
-#     - host: "app1.daws81s.online"
-#       http:
-#         paths:
-#         - pathType: Prefix
-#           path: "/"
-#           backend:
-#             service:
-#               name: app1
-#               port:
-#                 number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: echoserver
+    annotations:
+      kubernetes.io/ingress.class: alb
+      alb.ingress.kubernetes.io/scheme: internet-facing
+      alb.ingress.kubernetes.io/target-type: ip
+      alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:730335555354:certificate/885f423e-cc19-40fd-b549-63516c77b938
+      alb.ingress.kubernetes.io/listen-ports: '[ {"HTTPS": 443}]'
+      alb.ingress.kubernetes.io/tags: Environment=dev,Team=test
+      alb.ingress.kubernetes.io/group.name: expense
+spec:
+    rules:
+    - host: "app1.prudvirajn.online"
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: app1
+              port:
+                number: 80
