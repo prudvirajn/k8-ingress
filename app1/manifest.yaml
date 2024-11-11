@@ -47,13 +47,13 @@ metadata:
       kubernetes.io/ingress.class: alb
       alb.ingress.kubernetes.io/scheme: internet-facing
       alb.ingress.kubernetes.io/target-type: ip
-      alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:730335555354:certificate/885f423e-cc19-40fd-b549-63516c77b938
+      alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:730335555354:certificate/eb0bbd84-4418-4a15-9591-a1e63c2c7641
       alb.ingress.kubernetes.io/listen-ports: '[ {"HTTPS": 443}]'
       alb.ingress.kubernetes.io/tags: Environment=dev,Team=test
       alb.ingress.kubernetes.io/group.name: expense
 spec:
     rules:
-    - host: "app1.prudvirajn.online"
+    - host: "app1.prudviraj.online"
       http:
         paths:
         - pathType: Prefix
