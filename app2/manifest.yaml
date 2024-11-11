@@ -45,7 +45,7 @@ kind: Ingress
 metadata:
     name: app2
     annotations:
-      kubernetes.io/ingress.class: alb
+      # kubernetes.io/ingress.class: alb
       alb.ingress.kubernetes.io/scheme: internet-facing
       alb.ingress.kubernetes.io/target-type: ip
       alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:730335555354:certificate/885f423e-cc19-40fd-b549-63516c77b938
@@ -53,6 +53,7 @@ metadata:
       alb.ingress.kubernetes.io/tags: Environment=dev,Team=test
       alb.ingress.kubernetes.io/group.name: expense
 spec:
+    ingressClassName: alb
     rules:
     - host: "app2.prudviraj.online"
       http:
